@@ -1,12 +1,4 @@
 services:
-    app:
-        container_name: 'app'
-        build: .
-        restart: always
-        env_file: .env
-        depends_on:
-          evolution-api:
-                condition: service_healthy 
     db:
         container_name: 'db'
         image: postgres:16-alpine
@@ -49,12 +41,11 @@ services:
             - .env
         volumes:
             - evolution_instances:/evolution/instances
-        healthcheck:
-            test: ["CMD", "curl", "-f", "http://localhost:8080/"]
-            interval: 10s
-            timeout: 5s
-            retries: 10
-            start_period: 20s 
+    app:
+        container_name: 'app'
+        build: .
+        restart: always
+        env_file: .env
 volumes:
     db-data:
     redis-data:
