@@ -22,8 +22,19 @@ export default {
     'Responda apenas com a curiosidade, sem título, sem aspas e sem emojis.',
 
   // Modelos tentados em ordem: se um falhar ou demorar, passa para o próximo (todos têm camada gratuita).
-  modelos: ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-2.5-flash', 'gemini-2.5-flash-lite'],
+  // Se todos falharem (ex.: Google sobrecarregado), espera e faz outra rodada, até o limite de tempo.
+  modelos: [
+    'gemini-3.5-flash',
+    'gemini-3.8-flash',
+    'gemini-3.7-flash',
+    'gemini-3.6-flash',
+    'gemini-3.5-flash-lite',
+    'gemini-3.1-flash-lite',
+    'gemma-4-31b-it',
+  ],
   tempoLimiteSegundos: 40, // espera máxima por resposta de cada modelo
+  pausaEntreRodadasSegundos: 60, // espera antes de tentar todos os modelos de novo
+  tempoMaximoGeminiMinutos: 8, // depois disso desiste e manda o e-mail de falha
   historicoNoPrompt: 100, // quantas curiosidades anteriores vão no prompt para evitar repetição
   tentativas: 2, // tentativas por modelo quando o texto vem vazio ou repetido
 
