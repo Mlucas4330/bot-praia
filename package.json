@@ -8,7 +8,8 @@
     "grupos": "node --env-file=.env cli.js grupos",
     "teste": "node --env-file=.env cli.js teste",
     "enviar": "node --env-file=.env cli.js enviar",
-    "testar-aviso": "node --env-file=.env cli.js testar-aviso"
+    "testar-aviso": "node --env-file=.env cli.js testar-aviso",
+    "testar-producao": "node --env-file=.env cli.js testar-producao"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "@whiskeysockets/baileys": "^7.0.0-rc14",
     "nodemailer": "^10.6.0",
     "pino": "^10.4.0",
+    "qrcode": "^1.5.4",
     "qrcode-terminal": "^0.12.0"
   },
   "engines": {

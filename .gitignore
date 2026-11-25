@@ -3,3 +3,4 @@ node_modules/
 .netlify/
 auth/
 *.log
+qr.html

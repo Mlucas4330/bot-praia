@@ -1,7 +1,8 @@
 // Função de fundo (até 15 min): gera a curiosidade e envia a mensagem no grupo.
 // Só aceita chamadas com o segredo certo, para ninguém disparar mensagens pela URL pública.
+// Corpo opcional {"testeNumero": "51999999999"}: envia a mensagem para esse contato em vez do grupo (teste).
 
-import { executarEnvioDiario, enviarEmail, log } from '../../lib/robo.js'
+import { executarEnvioDiario, executarEnvioTeste, enviarEmail, log } from '../../lib/robo.js'
 
 export default async (req) => {
   const segredo = process.env.SEGREDO_ENVIO
@@ -14,7 +15,10 @@ export default async (req) => {
     log('Chamada recusada: segredo inválido.')
     return
   }
-  await executarEnvioDiario()
+
+  const corpo = await req.json().catch(() => ({}))
+  if (corpo.testeNumero) await executarEnvioTeste(corpo.testeNumero)
+  else await executarEnvioDiario()
 }
 
 export const config = {
