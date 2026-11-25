@@ -18,6 +18,7 @@ export default {
     'Escreva como se estivesse mandando no grupo de WhatsApp dos amigos: tudo em letras minúsculas, tom despojado ' +
     'e bem-humorado, pode usar "pra", "tá", "né" e gírias leves. ' +
     'No máximo 3 frases curtas, sem tomar partido e só com fatos dos quais você tem certeza. ' +
+    'Nada de boatos, lendas, fofocas ou histórias não confirmadas: só fatos documentados e aceitos pelos historiadores. ' +
     'Responda apenas com a curiosidade, sem título, sem aspas e sem emojis.',
 
   // Modelos tentados em ordem: se um falhar ou demorar, passa para o próximo (todos têm camada gratuita).
