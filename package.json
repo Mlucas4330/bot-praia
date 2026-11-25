@@ -1,0 +1,28 @@
+{
+  "name": "nova-pasta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "conectar": "node --env-file=.env cli.js conectar",
+    "grupos": "node --env-file=.env cli.js grupos",
+    "teste": "node --env-file=.env cli.js teste",
+    "enviar": "node --env-file=.env cli.js enviar",
+    "testar-aviso": "node --env-file=.env cli.js testar-aviso"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^3.6.1",
+    "@netlify/blobs": "^11.1.10",
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "nodemailer": "^10.6.0",
+    "pino": "^10.4.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
